@@ -1,0 +1,195 @@
+/* 1. Import font chữ từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Dòng này tải font chữ Roboto từ Google Fonts.
+Giúp chữ trên trang trông đẹp và chuyên nghiệp hơn. */
+
+/*  2. Reset mặc định và đặt font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+/* Xoá khoảng cách mặc định của các thẻ (margin, padding).
+box-sizing: border-box giúp tính toán kích thước chính xác.
+Toàn trang sẽ dùng font Roboto.
+ */
+
+/* 3. Thiết lập nền trang (body và hình nền mờ) */
+body {
+    background: #000;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    background: url("../assets/hero-image.jpg");
+    background-position: center;
+}
+/* Nền đen (#000) kết hợp với hình nền mờ làm nền phía sau 
+form.
+::before dùng để tạo lớp phủ mờ cho hình ảnh, không ảnh 
+hưởng đến nội dung chính. */
+
+/* 4. Thanh điều hướng (logo MindX hoặc tên app) */
+nav {
+  position: fixed;
+  padding: 25px 60px;
+  z-index: 1;
+}
+
+nav a img {
+  width: 167px;
+}
+/* nav là thanh điều hướng cố định ở trên.
+z-index: 1 đảm bảo hiển thị đè lên hình nền. */
+
+/* 5. Giao diện khối form-wrapper (phần form đăng nhập/đăng ký) */
+.form-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  padding: 70px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.75);
+}
+/* Canh giữa màn hình với left: 50%, top: 50%, và transform.
+Nền mờ (rgba) tạo hiệu ứng trong suốt đẹp mắt. */
+
+/* 6. Tiêu đề form */
+.form-wrapper h2 {
+  color: #fff;
+  font-size: 2rem;
+}
+/* Dòng tiêu đề "Sign In" hoặc "Sign Up" 
+có kích thước lớn, màu trắng. */
+
+/* 7. Tạo ô nhập (input) đẹp và có hiệu ứng */
+form .form-control {
+  height: 50px;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.form-control input {
+  height: 100%;
+  width: 100%;
+  background: #333;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0 20px;
+}
+/* Giao diện input tối màu, chữ trắng.
+border-radius làm bo góc. */
+
+/* Thêm hiệu ứng khi focus (click vào input): */
+.form-control input:is(:focus, :valid) {
+  background: #444;
+  padding: 16px 20px 0;
+}
+/* Khi người dùng gõ vào hoặc điền đúng, 
+input thay đổi màu nền. */
+
+/* Hiệu ứng label nổi lên: */
+.form-control label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8c8c8c;
+  transition: all 0.1s ease;
+}
+
+.form-control input:is(:focus, :valid) ~ label {
+  font-size: 0.75rem;
+  transform: translateY(-130%);
+}
+/* Khi người dùng gõ, label bay lên như hiệu ứng 
+"floating label" chuyên nghiệp. */
+
+/* 8. Nút Submit */
+form button {
+  width: 100%;
+  padding: 16px 0;
+  background: orange;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 4px;
+  border: none;
+  margin: 25px 0 10px;
+  cursor: pointer;
+}
+form button:hover {
+  background: darkorange;
+}
+/* Nút "Sign In" hoặc "Sign Up" có màu đỏ nổi bật.
+Hover đổi màu để tạo hiệu ứng khi di chuột. */
+
+/* 9. Phần “Remember me” và “Need help?” */
+form .form-help {
+  display: flex;
+  justify-content: space-between;
+}
+
+form .remember-me {
+  display: flex;
+}
+
+form .remember-me input {
+  margin-right: 5px;
+  accent-color: #b3b3b3;
+}
+/* Dễ dàng check “Remember me”, và thêm link hỗ trợ. */
+
+/* 10. Link & văn bản phụ */
+.form-wrapper a:hover {
+  text-decoration: underline;
+}
+
+.form-wrapper :where(label, p, small, a) {
+  color: #b3b3b3;
+}
+
+.form-wrapper p a {
+  color: #fff;
+}
+/* Link chuyển màu, gạch chân khi hover. */
+
+/* 11. Responsive – Hiển thị đẹp trên điện thoại */
+@media (max-width: 740px) {
+  body::before {
+    display: none;
+  }
+
+  nav,
+  .form-wrapper {
+    padding: 20px;
+  }
+
+  nav a img {
+    width: 140px;
+  }
+
+  .form-wrapper {
+    width: 100%;
+    top: 43%;
+  }
+
+  .form-wrapper form {
+    margin: 25px 0 40px;
+  }
+}
+/* Khi màn hình nhỏ (như điện thoại), 
+form sẽ tự điều chỉnh để hiển thị đẹp và dễ dùng. */
