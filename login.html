@@ -5,8 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./styles/auth.css">
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
+    <header>
+        <div class="navbar">
+    <p  style="
+          height: 100%;
+          width: auto;
+          font-size: 30px;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;
+        ">
+      <span><span style="color: var(--orange)">CineVerse</span></span>
+        </p>
+    <div style="display: flex; gap: 15px">
+      <a href="./search.html">
+        <i style="font-size: 25px" class="fa-solid fa-magnifying-glass"></i></a>
+      <div id="avatar-action-container"></div>
+    </div>
+  </div>
+    </header>
     <div class="form-wrapper">
         <h2>Login</h2>
         <form action="#" id="userForm">
@@ -26,7 +45,7 @@
                 </div>
                 <a href="#">Need help?</a>
             </div>
-            <p>New to Mindx cinema? <a href="./register.html">Sign up now</a></p>
+            <p>New to CineVerse? <a href="./register.html">Sign up now</a></p>
         </form>
     </div>
     <script src="./scripts/login.js"></script>
