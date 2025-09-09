@@ -232,6 +232,12 @@ footer > div {
   visibility: visible;
   transform: translateY(0);
 }
+.swiper-button-prev,
+.swiper-button-next {
+  color: orange;
+  border-radius: 50%;
+  padding: 10px;
+}
 /* Responsive chung cho toàn bộ site */
 @media (max-width: 768px) {
   .navbar {

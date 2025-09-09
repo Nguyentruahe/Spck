@@ -1,0 +1,7 @@
+-register.html, login.html: thêm header+footer
+-index.html: thiếu thẻ header
+-watch.html: thiếu thẻ header
+-info.css: có sử dụng grid ở dòng 51
+-file có chatbot:
+index.html, info.html, search.html, watch.html
+-làm tính năng comment de co tieu chi CRUD
